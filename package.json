@@ -1,0 +1,23 @@
+{
+  "name": "yijie_cp_server",
+  "version": "0.1.0",
+  "description": "易接 SDK CP 服务器。实现了两个接口，一个是登陆验证接 口，一个是消费记录同步接口。",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/uhziel/yijie_cp_server.git"
+  },
+  "author": "uhziel@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/uhziel/yijie_cp_server/issues"
+  },
+  "homepage": "https://github.com/uhziel/yijie_cp_server#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
