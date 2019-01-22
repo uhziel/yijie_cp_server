@@ -1,5 +1,6 @@
 [Unit]
 Description=Node.js yijie cp server
+After=mariadb.service
 
 [Service]
 User=root
