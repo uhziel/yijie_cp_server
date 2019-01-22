@@ -15,7 +15,7 @@ mysql -uroot -p${rootpasswd} < pay.sql
 echo "数据库创建成功!"
 
 echo "创建新用户..."
-mysql -uroot -p${rootpasswd} -e "CREATE USER ${username}@'localhost' IDENTIFIED WITH mysql_native_password BY '${userpasswd}';"
+mysql -uroot -p${rootpasswd} -e "CREATE USER ${username}@'localhost' IDENTIFIED BY '${userpasswd}';"
 echo "用户创建成功!"
 echo ""
 echo "授予${dbname}的所有权限给用户${username}!" | grep -v "Using a password"
