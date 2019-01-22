@@ -11,6 +11,7 @@ sudo mysql_secure_installation
 cd ~
 git clone https://github.com/uhziel/yijie_cp_server.git
 cd yijie_cp_server/
+#执行前先修改下其中的userpasswd。app.js内的privateKey、mysqlPassword也要修改下
 ./init_mysql.sh
 npm install
 cp yijie_cp_server.service /etc/systemd/system/
