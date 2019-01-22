@@ -1,0 +1,13 @@
+[Unit]
+Description=Node.js yijie cp server
+
+[Service]
+type=simple
+User=root
+Group=root
+Restart=always
+KillSignal=SIGQUIT
+WorkingDirectory=/root/yijie_cp_server
+ExecStart=node /root/yijie_cp_server/app.js
+[Install]
+WantedBy=multi-user.target

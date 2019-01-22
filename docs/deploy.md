@@ -8,9 +8,13 @@
 sudo yum install nodejs
 sudo yum install mariadb-server
 sudo systemctl start mariadb
+sudo systemctl enable mariadb
+sudo mysql_secure_installation
 cd ~
 git clone https://github.com/uhziel/yijie_cp_server.git
 cd yijie_cp_server/
 ./init_mysql.sh
-npm start
+npm install
+mv yijie_cp_server.service /etc/systemd/system/
+sudo systemctl enable yijie_cp_server
 `
