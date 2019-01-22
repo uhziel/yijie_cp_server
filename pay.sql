@@ -62,7 +62,7 @@ CREATE TABLE `orders` (
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-CREATE DEFINER=`cp_user`@`%` PROCEDURE `syncPayResult`(IN _sdk varchar(255), IN _app varchar(255), IN _uid varchar(255))
+CREATE DEFINER=`cp_user`@`LOCALHOST` PROCEDURE `syncPayResult`(IN _sdk varchar(255), IN _app varchar(255), IN _uid varchar(255))
 BEGIN
     SELECT cbi, fee FROM orders WHERE sdk=_sdk AND app=_app AND uid=_uid AND taked=0;
     UPDATE orders SET taked=1 WHERE sdk=_sdk AND app=_app AND uid=_uid AND taked=0;
