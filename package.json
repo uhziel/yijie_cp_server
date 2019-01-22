@@ -18,6 +18,9 @@
   },
   "homepage": "https://github.com/uhziel/yijie_cp_server#readme",
   "dependencies": {
-    "express": "^4.16.4"
+    "blueimp-md5": "^2.10.0",
+    "express": "^4.16.4",
+    "mysql": "^2.16.0",
+    "request": "^2.88.0"
   }
 }
