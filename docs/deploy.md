@@ -16,5 +16,6 @@ cd yijie_cp_server/
 ./init_mysql.sh
 npm install
 mv yijie_cp_server.service /etc/systemd/system/
+sudo systemctl start yijie_cp_server
 sudo systemctl enable yijie_cp_server
 `
