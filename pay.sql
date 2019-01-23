@@ -43,7 +43,7 @@ CREATE TABLE `orders` (
   `tcd` varchar(255) NOT NULL,
   `uid` varchar(255) NOT NULL,
   `ver` varchar(32) NOT NULL,
-  `taked` int(11) NOT NULL,
+  `taked_time` timestamp NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `tcd` (`tcd`)
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
@@ -64,8 +64,8 @@ CREATE TABLE `orders` (
 DELIMITER ;;
 CREATE DEFINER=`cp_user`@`LOCALHOST` PROCEDURE `syncPayResult`(IN _sdk varchar(255), IN _app varchar(255), IN _uid varchar(255))
 BEGIN
-    SELECT cbi, fee FROM orders WHERE sdk=_sdk AND app=_app AND uid=_uid AND taked=0;
-    UPDATE orders SET taked=1 WHERE sdk=_sdk AND app=_app AND uid=_uid AND taked=0;
+    SELECT cbi, fee FROM orders WHERE sdk=_sdk AND app=_app AND uid=_uid AND taked_time="0000-00-00 00:00:00";
+    UPDATE orders SET taked_time=NOW() WHERE sdk=_sdk AND app=_app AND uid=_uid AND taked_time="0000-00-00 00:00:00";
 END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;

@@ -61,12 +61,13 @@ app.get("/syncPayResult", (req, res) => {
             console.log("http get fail, err_code:", err.code, " q:", q);
             return;
         }
-
+/*
         if (body != 0) {
             res.send([]);
             console.log("checkUserLogin fail", q);
             return; 
         }
+*/
         //TODO uin是否就是uid
         let query = connection.query(`CALL syncPayResult(?, ?, ?);`,
             [q.sdk, q.app, q.uin], 
@@ -129,7 +130,7 @@ function convert2Order(query) {
     order.tcd = query.tcd;
     order.uid = query.uid;
     order.ver = query.ver;
-    order.taked = 0;
+    order.taked_time = "0000-00-00 00:00:00";
 
     return order;
 }
